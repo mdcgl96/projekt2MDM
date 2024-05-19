@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Classification with DJL Serving</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="script.js" async></script>
+    <style>
+        .custom-file-upload {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        .custom-file-upload-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .custom-file-upload-button:hover {
+            background-color: #0056b3;
+        }
+        .custom-title {
+            color: #007bff;
+        }
+        .custom-text {
+            color: #007bff;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1 class="custom-title">Projekt 2 DJL Serving - Bild Klassifizierung</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="image" class="custom-file-upload">
+                    <button type="button" class="custom-file-upload-button" onclick="document.getElementById('image').click();">Choose File</button>
+                    <input type="file" accept="image/png, image/jpeg" id="image" name="image" onchange="checkFiles(this.files);">
+                </label>
+            </div>
+        </form>
+
+        <div id="answerPart" style="visibility: hidden;">
+            <p class="custom-text"><b>Hmm ich tippe auf:</b></p>
+            <div id="answer"></div>
+
+            <p id="previewPart" class="custom-text"><b>Analysiertes Bild:</b></p>
+            <p><img id="preview" width="300" src="#" alt="preview" /></p>
+
+        </div>
+    </div>
+</body>
+
+</html>
